@@ -3,6 +3,7 @@ import { useState } from "react"
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 import Login from "./components/Login/Login";
+import useToken from "./useToken";
 
 import {
   BrowserRouter,
@@ -13,7 +14,8 @@ import {
 import './App.css';
 
 function App() {
-  const [ token, setToken ] = useState();
+  const { token, setToken } = useToken();
+  
 
   if(!token){
     return <Login setToken={setToken}/>
